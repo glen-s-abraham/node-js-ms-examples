@@ -1,0 +1,6 @@
+kubectl apply -f posts.yaml //apply config to kubernetes pod
+kubectl delete posts //delete existing pods
+kubectl get pods //list pods
+kubectl exec -it  posts -- sh //get command shell 
+kubectl logs posts //get logs
+kubectl describe pod posts //get pod details
