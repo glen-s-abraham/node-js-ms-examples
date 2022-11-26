@@ -11,17 +11,31 @@ const consumers = [
 ]
 
 
+
 const app = express();
 
+const eventStore = [];
 const commentsByPostId = {}
 
 app.use(bodyParser.json());
 
-app.post('/events',(req,res)=>{
+app.post('/events',async(req,res)=>{
     const event = req.body;
-    consumers.forEach(consumer=>axios.post(consumer,event));
+    eventStore.push(event);
+    for(let consumer of consumers){
+        try {
+            await axios.post(consumer,event);
+        } catch (error) {
+            console.log(error);
+            continue;
+        }
+    }
     res.status(200).json({status:"OK"});
 });
+
+app.get('/events',(req,res)=>{
+    res.status(200).send(eventStore);
+})
 
 
 app.listen(4005, () => console.log('Listening on port 4005'));

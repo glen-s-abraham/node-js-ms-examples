@@ -29,7 +29,7 @@ app.post('/events', async (req, res) => {
         
     }
 
-    res.status(200);
+    res.status(200).json({status:"OK"});
 })
 
 
