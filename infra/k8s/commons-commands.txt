@@ -4,3 +4,8 @@ kubectl get pods //list pods
 kubectl exec -it  posts -- sh //get command shell 
 kubectl logs posts //get logs
 kubectl describe pod posts //get pod details
+
+kubectl get deployments
+kubectl describe deployments [depl name]
+kubectl delete deployment [depl-name]
+kubectl rollout restart deployment [depl-name]
