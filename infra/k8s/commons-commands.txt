@@ -9,3 +9,5 @@ kubectl get deployments
 kubectl describe deployments [depl name]
 kubectl delete deployment [depl-name]
 kubectl rollout restart deployment [depl-name]
+
+kubectl get nodes -o wide //ndoe details
