@@ -7,7 +7,7 @@ const consumers = [
     'http://posts-clusterip-srv:4000/events',
     'http://comments-clusterip-srv:4001/events',
     'http://query-clusterip-srv:4002/events',
-    'http://modration-clusterip-srv:4003/events',
+    'http://moderation-clusterip-srv:4003/events',
     
 ]
 

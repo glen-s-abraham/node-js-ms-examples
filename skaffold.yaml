@@ -1,0 +1,51 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+build:
+  artifacts:
+  - image: glensabraham/posts-service
+    context: posts
+    sync:
+      manual:
+      - src: '*.js'
+        dest: .
+    docker:
+      dockerfile: Dockerfile
+  - image: glensabraham/comments-service
+    context: comments
+    sync:
+      manual:
+      - src: '*.js'
+        dest: .
+    docker:
+      dockerfile: Dockerfile
+  - image: glensabraham/event-bus
+    context: event-bus
+    sync:
+      manual:
+      - src: '*.js'
+        dest: .
+    docker:
+      dockerfile: Dockerfile
+  - image: glensabraham/moderation-service
+    context: moderation
+    sync:
+      manual:
+      - src: '*.js'
+        dest: .
+    docker:
+      dockerfile: Dockerfile
+  - image: glensabraham/query-service
+    context: query
+    sync:
+      manual:
+      - src: '*.js'
+        dest: .
+    docker:
+      dockerfile: Dockerfile
+  local:
+    push: false
+manifests:
+  rawYaml:
+  - ./infra/k8s/*
+deploy:
+  kubectl: {}
