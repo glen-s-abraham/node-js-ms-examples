@@ -5,9 +5,10 @@ const bodyParser = require('body-parser');
 
 const consumers = [
     'http://posts-clusterip-srv:4000/events',
-    // 'http://localhost:4001/events',
-    // 'http://localhost:4002/events',
-    // 'http://localhost:4003/events'
+    'http://comments-clusterip-srv:4001/events',
+    'http://query-clusterip-srv:4002/events',
+    'http://modration-clusterip-srv:4003/events',
+    
 ]
 
 

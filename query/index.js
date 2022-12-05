@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 
-const eventBusEndPoint = 'http://localhost:4005/events'
+const eventBusEndPoint = 'http://event-bus-srv:4005/events'
 
 const app = express();
 
